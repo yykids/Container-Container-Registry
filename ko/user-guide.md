@@ -57,8 +57,7 @@ $ sudo systemctl start docker
 ```
 
 ### 프로젝트 통합 앱키(Appkey) 확인
-도커 CLI 도구를 이용해 사용자 레지스트리에 로그인하기 위해서는 프로젝트 통합 앱키가 필요합니다. 통합 앱키는 프로젝트 설정 페이지에서 생성해 사용할 수 있습니다.
-* 프로젝트 설정 > API 보안 설정 > Appkey 생성
+도커 CLI 도구를 이용해 사용자 레지스트리에 로그인하기 위해서는 프로젝트 통합 앱키가 필요합니다. 통합 앱키는 **프로젝트 설정 페이지의 API 보안 설정**에서 생성해 사용할 수 있습니다.
 
 ## 컨테이너 레지스트리 사용
 ### 사용자 레지스트리 주소 확인
@@ -73,15 +72,15 @@ Password: {통합 Appkey}
 Login Succeeded
 ```
 
-### 컨테이너 이미지 저장하기 (Push)
+### 컨테이너 이미지 저장 (Push)
 컨테이너 이미지를 사용자 레지스트리에 저장하려면 사용자 레지스트리 주소가 포함된 태그가 필요합니다. 태그한 이미지는 **push** 명령을 통해 사용자 레지스트리에 저장할 수 있습니다.
 
 * 예시
 ```
-$ docker tag ubuntu:18.04 example-kr1-registry.container.cloud.toastoven.net/ubuntu:18.04
+$ docker tag ubuntu:18.04 example-kr1-registry.container.cloud.toast.com/ubuntu:18.04
 
-$ docker push example-kr1-registry.container.cloud.toastoven.net/ubuntu:18.04
-The push refers to repository [example-kr1-registry.container.cloud.toastoven.net/ubuntu]
+$ docker push example-kr1-registry.container.cloud.toast.com/ubuntu:18.04
+The push refers to repository [example-kr1-registry.container.cloud.toast.com/ubuntu]
 16542a8fc3be: Pushed
 6597da2e2e52: Pushed
 977183d4e999: Pushed
@@ -89,7 +88,7 @@ c8be1b8f4d60: Pushed
 18.04: digest: sha256:e5dd9dbb37df5b731a6688fa49f4003359f6f126958c9c928f937bec69836320 size: 1152
 ```
 
-### 저장된 컨테이너 이미지 조회하기
+### 저장된 컨테이너 이미지 조회
 저장된 컨테이너 이미지는 웹 콘솔에서 조회할 수 있습니다.
 
 * 리포지토리(Repository) 목록
@@ -103,26 +102,26 @@ c8be1b8f4d60: Pushed
 
 * 예시
 ```
-$ docker pull example-kr1-registry.container.cloud.toastoven.net/ubuntu:18.04
+$ docker pull example-kr1-registry.container.cloud.toast.com/ubuntu:18.04
 18.04: Pulling from ubuntu
 5bed26d33875: Pull complete
 f11b29a9c730: Pull complete
 930bda195c84: Pull complete
 78bf9a5ad49e: Pull complete
 Digest: sha256:e5dd9dbb37df5b731a6688fa49f4003359f6f126958c9c928f937bec69836320
-Status: Downloaded newer image for example-kr1-registry.container.cloud.toastoven.net/ubuntu:18.04
-example-kr1-registry.container.cloud.toastoven.net/ubuntu:18.04
+Status: Downloaded newer image for example-kr1-registry.container.cloud.toast.com/ubuntu:18.04
+example-kr1-registry.container.cloud.toast.com/ubuntu:18.04
 
 $ docker images
-REPOSITORY                                                  TAG     IMAGE ID        CREATED         SIZE
-example-kr1-registry.container.cloud.toastoven.net/ubuntu   18.04   4e5021d210f6    12 days ago     64.2MB
+REPOSITORY                                              TAG     IMAGE ID        CREATED         SIZE
+example-kr1-registry.container.cloud.toast.com/ubuntu   18.04   4e5021d210f6    12 days ago     64.2MB
 ```
 
-### 저장된 컨테이너 이미지 삭제하기
+### 저장된 컨테이너 이미지 삭제
 저장된 컨테이너 이미지는 웹 콘솔에서 삭제할 수 있습니다. 태그 목록에서 태그를 선택하고 이미지 삭제 버튼 클릭해 삭제합니다.
 
 > [참고]
 > 하나의 컨테이너 이미지에 여러 개의 태그를 생성할 수 있습니다. 이렇게 생성된 태그들은 같은 다이제스트 값을 가지고 있습니다. 태그를 삭제할 때 같은 다이제스트 값을 가진 다른 태그들이 있다면 모두 함께 삭제됩니다.
 
-### 콘솔에서 리포지토리 삭제
+### 컨테이너 이미지 리포지토리 삭제
 컨테이너 이미지를 리포지토리 단위로 삭제하려면 리포지토리 목록에서 삭제할 수 있습니다. 리포지토리를 삭제하면 리포지토리의 모든 이미지가 삭제됩니다.
