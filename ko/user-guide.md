@@ -18,7 +18,7 @@
 // 도커 설치에 필요한 패키지 설치
 $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 
-// 도커 저장소를 추가합니다.
+// 도커 저장소 추가
 $ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 // 도커 설치
@@ -30,7 +30,7 @@ $ sudo systemctl start docker
 
 * Ubuntu
 ```
-// apt 인덱스를 업데이트합니다.
+// apt 인덱스 업데이트
 $ sudo apt-get update
 
 // repository over HTTPS를 사용하기 위한 패키지 설치
@@ -64,11 +64,11 @@ $ sudo systemctl start docker
 사용자 레지스트리 주소는 **Container > Container Registry** 서비스 페이지의 **레지스트리 주소** 버튼을 클릭해 확인할 수 있습니다.
 
 ### 사용자 레지스트리 로그인
-도커 CLI 도구를 이용해 사용자 레지스트리에 접근하기 위해서는 로그인이 필요합니다. 로그인에 사용되는 정보는 TOAST 사용자 계정 Email 주소와 컨테이너 레지스트리 서비스가 활성화된 프로젝트의 통합 앱키입니다.
+도커 CLI 도구를 이용해 사용자 레지스트리에 접근하기 위해서는 로그인이 필요합니다. 로그인에 사용되는 정보는 TOAST 사용자 계정 이메일 주소와 컨테이너 레지스트리 서비스가 활성화된 프로젝트의 통합 앱키(AppKey)입니다.
 ```
 $ docker login {사용자 레지스트리 주소}
-Username: {TOAST 사용자 계정 Email 주소}
-Password: {통합 Appkey}
+Username: {TOAST 사용자 계정 이메일 주소}
+Password: {통합 앱키}
 Login Succeeded
 ```
 
