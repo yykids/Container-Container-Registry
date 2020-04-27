@@ -1,30 +1,30 @@
 ## Container > Container Registry > 사용 가이드
 
 ## 사전 준비
-### 도커(Docker) 설치
-컨테이너 레지스트리 서비스는 도커 컨테이너 이미지를 저장하고 배포하기 위한 서비스입니다. 컨테이너 이미지를 다루기 위해서는 우선 사용자의 환경에 도커가 설치되어 있어야 합니다.
+### Docker(도커) 설치
+Container Registry 서비스는 Docker 컨테이너 이미지를 저장하고 배포하기 위한 서비스입니다. 컨테이너 이미지를 다루기 위해서는 우선 사용자의 환경에 Docker가 설치되어 있어야 합니다.
 
 #### Windows
-도커 허브(docker hub)에서 [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)를 다운로드해 설치합니다.
+Docker Hub에서 [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)를 다운로드해 설치합니다.
 
 #### macOS
-도커 허브에서 [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)을 다운로드해 설치합니다.
+Docker Hub에서 [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)을 다운로드해 설치합니다.
 
-#### linux
-리눅스 배포판에 따라 설치 과정이 다릅니다. CentOS와 우분투가 아닌 다른 배포판을 사용한다면 [도커 설치 가이드](https://docs.docker.com/engine/install)를 확인하세요.
+#### Linux
+Linux 배포판에 따라 설치 과정이 다릅니다. CentOS와 Ubuntu가 아닌 다른 배포판을 사용한다면 [Install Docker Engine](https://docs.docker.com/engine/install)을 확인하세요.
 
 * CentOS
 ```
-// 도커 설치에 필요한 패키지 설치
+// Docker 설치에 필요한 패키지 설치
 $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 
-// 도커 저장소 추가
+// Docker 저장소 추가
 $ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
-// 도커 설치
+// Docker 설치
 $ sudo yum install -y docker-ce docker-ce-cli containerd.io
 
-// 도커 서비스 시작
+// Docker 서비스 시작
 $ sudo systemctl start docker
 ```
 
@@ -49,15 +49,15 @@ sub   rsa4096 2017-02-22 [S]
 $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 $ sudo apt-get update
 
-// 도커 설치
+// Docker 설치
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-// 도커 서비스 시작
+// Docker 서비스 시작
 $ sudo systemctl start docker
 ```
 
 ### 앱키(Appkey) 확인
-도커 CLI 도구를 이용해 사용자 레지스트리에 로그인하기 위해서는 서비스 앱키 또는 프로젝트 통합 앱키가 필요합니다. 서비스 앱키는 **Container > Container Registry** 서비스 페이지의 **URL & Appkey** 버튼을 클릭해 확인할 수 있습니다. 프로젝트 통합 앱키는 **프로젝트 설정 페이지의 API 보안 설정**에서 생성해 사용할 수 있습니다.
+Docker 명령줄 도구(CLI)를 이용해 사용자 레지스트리에 로그인하려면 서비스 Appkey 또는 프로젝트 통합 Appkey가 필요합니다. 서비스 Appkey는 **Container > Container Registry** 서비스 페이지의 **URL & Appkey** 버튼을 클릭해 확인할 수 있습니다. 프로젝트 통합 Appkey는 **프로젝트 설정 페이지의 API 보안 설정**에서 생성해 사용할 수 있습니다.
 
 ## 컨테이너 레지스트리 사용
 
@@ -68,7 +68,7 @@ $ sudo systemctl start docker
 사용자 레지스트리 주소는 **Container > Container Registry** 서비스 페이지의 **레지스트리 주소** 버튼을 클릭해 확인할 수 있습니다.
 
 ### 사용자 레지스트리 로그인
-컨테이너 이미지를 저장하거나, 원하는 환경으로 가져오려면 도커 CLI 도구를 이용해야 합니다. 도커 CLI 도구를 이용해 사용자 레지스트리에 접근하기 위해서는 로그인이 필요합니다. 로그인에 사용되는 정보는 TOAST 사용자 계정 이메일 주소와 서비스 앱키 또는 컨테이너 레지스트리 서비스가 활성화된 프로젝트의 통합 앱키입니다.
+컨테이너 이미지를 저장하거나, 원하는 환경으로 가져오려면 Docker CLI 도구를 이용해야 합니다. Docker CLI 도구를 이용해 사용자 레지스트리에 접근하려면 로그인을 해야 합니다. 로그인에 사용되는 정보는 TOAST 사용자 계정 이메일 주소와 서비스 Appkey 또는 Container Registry 서비스가 활성화된 프로젝트의 통합 Appkey입니다.
 
 ```
 $ docker login {사용자 레지스트리 주소}
@@ -78,7 +78,7 @@ Login Succeeded
 ```
 
 ### 태그 생성
-컨테이너 이미지를 사용자 레지스트리에 저장하려면 사용자 레지스트리 주소를 포함된 리포지토리(Repository) 이름과 태그(Tag)가 필요합니다. 도커 CLI 도구의 **tag** 명령을 이용해 만들 수 있습니다.
+컨테이너 이미지를 사용자 레지스트리에 저장하려면 사용자 레지스트리 주소를 포함한 리포지토리(repository) 이름과 태그(tag)가 필요합니다. Docker CLI 도구의 **tag** 명령을 이용해 만들 수 있습니다.
 
 ```
 $ docker tag {리포지토리 이름}:{태그} {사용자 레지스트리 주소}/{리포지토리 이름}:{태그}
@@ -90,10 +90,10 @@ $ docker tag ubuntu:18.04 example-kr1-registry.container.cloud.toast.com/ubuntu:
 ```
 
 > [참고]
-> 컨테이너 이미지 이름([리포지토리 이름]:[태그 이름])은 소문자, 숫자, 일부 특수문자(-, .)만 허용합니다. 리포지토리 이름은 레지스트리 주소를 포함해 최대 255자, 태그 이름은 최대 129자로 제한됩니다. 이미지 이름이 길면 사용하기 불편할 수 있습니다. 적당한 길이의 이름을 사용하시기 바랍니다.
+> 컨테이너 이미지 이름([리포지토리 이름]:[태그 이름])으로는 영어 소문자, 숫자, 일부 특수문자(-, .)만 허용합니다. 리포지토리 이름은 레지스트리 주소를 포함해 최대 255자, 태그 이름은 최대 129자로 제한됩니다. 이미지 이름이 길면 사용하기 불편할 수 있습니다. 적당한 길이의 이름을 사용하시기 바랍니다.
 
-### 컨테이너 이미지 저장 (Push)
-도커 CLI 도구의 **push** 명령을 통해 컨테이너 이미지를 사용자 레지스트리에 저장할 수 있습니다.
+### 컨테이너 이미지 저장(Push)
+Docker CLI 도구의 **push** 명령을 사용해 컨테이너 이미지를 사용자 레지스트리에 저장할 수 있습니다.
 
 ```
 $ docker push {사용자 레지스트리 주소}/{리포지토리 이름}:{태그 이름}
@@ -119,8 +119,8 @@ c8be1b8f4d60: Pushed
 * 태그 목록
 리포지토리 목록에서 원하는 리포지토리를 클릭하면 선택한 리포지토리에 저장된 태그 목록을 조회할 수 있습니다. 원하는 태그를 선택하면 태그의 상세 정보를 확인할 수 있습니다. 제공되는 태그 주소를 이용해 원하는 환경에 배포할 수 있습니다.
 
-### 컨테이너 이미지 가져오기 (Pull)
-도커 CLI 도구의 **pull** 명령을 통해 이미지를 가져올 수 있습니다. 웹 콘솔에서 가져올 이미지의 태그 주소를 확인해야 합니다.
+### 컨테이너 이미지 가져오기(Pull)
+Docker CLI 도구의 **pull** 명령을 사용해 이미지를 가져올 수 있습니다. 웹 콘솔에서 가져올 이미지의 태그 주소를 확인해야 합니다.
 
 ```
 $ docker pull {태그 주소}
