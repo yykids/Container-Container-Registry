@@ -1,7 +1,7 @@
-## Container > Container Registry > 사용 가이드
+## Container > Container Registry > User Guide 사용 가이드
 
-## 사전 준비
-### Docker(도커) 설치
+## 사전 준비 Prerequisites 
+### Docker(도커) 설치 Installing Dockers 
 Container Registry 서비스는 Docker 컨테이너 이미지를 저장하고 배포하기 위한 서비스입니다. 컨테이너 이미지를 다루기 위해서는 우선 사용자의 환경에 Docker가 설치되어 있어야 합니다.
 
 #### Windows
