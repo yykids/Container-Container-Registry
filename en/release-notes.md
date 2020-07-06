@@ -1,6 +1,6 @@
-## Container > Container Registry  > 릴리스 노트
+## Container > Container Registry  > Release Notes 
 
-### 2020. 06. 23.
-#### 신규 서비스 출시
-* Docker 컨테이너 이미지를 쉽고 안전하게 저장하고, 원하는 환경에 배포할 수 있습니다.
-* 저장된 이미지를 간편하게 조회하고 관리할 수 있는 웹 콘솔 환경을 제공합니다.
+### June 23, 2020
+#### Release of New Service 
+* Docker container images can be saved easily and safely, and deployed to the environment you need. 
+* Also provides the web console to query and manage saved images with ease. 
