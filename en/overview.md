@@ -1,13 +1,13 @@
-## Container > Container Registry > 개요
-Docker(도커) 컨테이너 이미지를 쉽고 안전하게 저장, 관리하고 배포할 수 있는 비공개 컨테이너 레지스트리 서비스입니다.
+## Container > Container Registry > Overview
+TOAST provides non-open source container registry service to safely and easily save, manage, and deploy Docker container images. 
 
-TOAST Container Registry 서비스는 Docker 이미지 매니페스트 V2를 지원합니다. 따라서 익숙한 Docker 명령줄 도구(CLI)를 그대로 사용해 컨테이너 이미지를 관리할 수 있습니다. 저장된 컨테이너 이미지를 검색하고, 사용하지 않는 이미지를 삭제할 수 있는 웹 콘솔 환경도 제공합니다.
+TOAST Container Registry supports Docker Image Manifest v2, and it applies the familiar docker command line (CLI) to manage images. It also provides the web console to search saved images and delete those that are not used any more.   
 
-TOAST Container Registry 서비스는 TOAST Kubernetes 서비스와 연동해 사용자의 애플리케이션을 손쉽게 컨테이너 환경으로 구축할 수 있습니다.
+Integration with TOAST Kubernetes is also available to easily implement user applications as containers.  
 
 
-## 서비스 특징
-* 사용자의 컨테이너 이미지는 HTTPS 프로토콜로 암호화하여 전송되며 비공개 클라우드 레지스트리에 안전하게 저장됩니다.
-* TOAST Object Storage를 기반으로 하여 뛰어난 확장성과 안정성을 제공합니다. 사용자는 스토리지 용량을 고려할 필요 없이, 원하는 만큼 컨테이너 이미지를 저장할 수 있습니다.
-* 익숙한 Docker 명령줄 도구(CLI)를 이용해 컨테이너 이미지를 손쉽게 저장하고, 원하는 환경에 배포할 수 있습니다.
-* Kubernetes를 이용한 컨테이너 배포 환경에 쉽게 연동할 수 있습니다.
+## Service Features 
+* User container images are encrypted in HTTPS protocol for transfer and safely saved at a non-public cloud registry. 
+* Based on TOAST Object Storage, it is highly scalable and stable. Users don't need to consider storage volume to save container images as much as required. 
+* By using the familiar Docker command line (CLI), container images can be easily saved and deployed to the environment you need. 
+* It is easy to integrate the service with a Kubernetes-based container deployment environment.  
