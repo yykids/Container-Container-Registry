@@ -90,7 +90,7 @@ $ docker tag ubuntu:18.04 example-kr1-registry.container.cloud.toast.com/ubuntu:
 ```
 
 > [Note]
-> Name of a container image ([Repository name]:[Tag name])allows small-case letters, numbers, and some special characters (-, .) only. A name cannot be longer than 255, including registry address, and a tag cannot be longer than 129 characters. A name is recommended not to be too long, though.   
+> Name of a container image ([Repository name]:[Tag name])allows small-case letters, numbers, and some special characters (-, _, /, .) only. A name cannot be longer than 255, including registry address, and a tag cannot be longer than 129 characters. A name is recommended not to be too long, though.   
 
 ### Save (Push) Container Images  
 Use the **push** command of Docker CLI to save container images at a user registry.  
