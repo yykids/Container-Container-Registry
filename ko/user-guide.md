@@ -11,9 +11,9 @@ Docker Hub에서 [Docker Desktop for Windows](https://hub.docker.com/editions/co
 Docker Hub에서 [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)을 다운로드해 설치합니다.
 
 #### Linux
-Linux 배포판에 따라 설치 과정이 다릅니다. CentOS와 Ubuntu가 아닌 다른 배포판을 사용한다면 [Install Docker Engine](https://docs.docker.com/engine/install)을 확인하세요.
+Linux 배포판에 따라 설치 과정이 다릅니다. CentOS 7, Ubuntu가 아닌 다른 배포판을 사용한다면 [Install Docker Engine](https://docs.docker.com/engine/install)을 확인하세요.
 
-* CentOS
+* CentOS 7
 ```
 // Docker 설치에 필요한 패키지 설치
 $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
