@@ -11,9 +11,9 @@ Docker Hub에서 [Docker Desktop for Windows](https://hub.docker.com/editions/co
 Docker Hub에서 [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)을 다운로드해 설치합니다.
 
 #### Linux
-Linux 배포판에 따라 설치 과정이 다릅니다. CentOS와 Ubuntu가 아닌 다른 배포판을 사용한다면 [Install Docker Engine](https://docs.docker.com/engine/install)을 확인하세요.
+Linux 배포판에 따라 설치 과정이 다릅니다. CentOS 7, Ubuntu가 아닌 다른 배포판을 사용한다면 [Install Docker Engine](https://docs.docker.com/engine/install)을 확인하세요.
 
-* CentOS
+* CentOS 7
 ```
 // Docker 설치에 필요한 패키지 설치
 $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
@@ -77,7 +77,11 @@ Password: {Appkey}
 Login Succeeded
 ```
 
+> [참고]
+> docker login 명령으로 얻어지는 토큰의 최대 유효 시간은 12시간 입니다.
+
 ### 태그 생성
+
 컨테이너 이미지를 사용자 레지스트리에 저장하려면 사용자 레지스트리 주소를 포함한 리포지토리(repository) 이름과 태그(tag)가 필요합니다. Docker CLI 도구의 **tag** 명령을 이용해 만들 수 있습니다.
 
 ```
@@ -90,7 +94,7 @@ $ docker tag ubuntu:18.04 example-kr1-registry.container.cloud.toast.com/ubuntu:
 ```
 
 > [참고]
-> 컨테이너 이미지 이름([리포지토리 이름]:[태그 이름])으로는 영어 소문자, 숫자, 일부 특수문자(-, .)만 허용합니다. 리포지토리 이름은 레지스트리 주소를 포함해 최대 255자, 태그 이름은 최대 129자로 제한됩니다. 이미지 이름이 길면 사용하기 불편할 수 있습니다. 적당한 길이의 이름을 사용하시기 바랍니다.
+> 컨테이너 이미지 이름([리포지토리 이름]:[태그 이름])으로는 영어 소문자, 숫자, 일부 특수문자(-, _, /, .)만 허용합니다. 리포지토리 이름은 레지스트리 주소를 포함해 최대 255자, 태그 이름은 최대 129자로 제한됩니다. 이미지 이름이 길면 사용하기 불편할 수 있습니다. 적당한 길이의 이름을 사용하시기 바랍니다.
 
 ### 컨테이너 이미지 저장(Push)
 Docker CLI 도구의 **push** 명령을 사용해 컨테이너 이미지를 사용자 레지스트리에 저장할 수 있습니다.
