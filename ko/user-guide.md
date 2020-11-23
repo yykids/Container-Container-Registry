@@ -77,7 +77,11 @@ Password: {Appkey}
 Login Succeeded
 ```
 
+> [참고]
+> docker login 명령으로 얻어지는 토큰의 최대 유효 시간은 12시간 입니다.
+
 ### 태그 생성
+
 컨테이너 이미지를 사용자 레지스트리에 저장하려면 사용자 레지스트리 주소를 포함한 리포지토리(repository) 이름과 태그(tag)가 필요합니다. Docker CLI 도구의 **tag** 명령을 이용해 만들 수 있습니다.
 
 ```
