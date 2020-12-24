@@ -77,6 +77,9 @@ Password: {Appkey}
 Login Succeeded
 ```
 
+> [Note]
+> When docker login command is used, the maximum validity period of the token is 12 hours.
+
 ### Create Tags
 To save container images at a user registry, name of a repository including user registry address, and tags are required. To create a tag, use the **tag** command of Docker CLI. 
 
